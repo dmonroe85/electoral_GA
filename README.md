@@ -16,6 +16,7 @@ Then
 
 *Using the population of registered voters*
 
+```
 33799562 / 153170043 ~= 22.07% of the population with 269 EC votes, 6.77 seconds
 WINNERS:
 ['Alabama', 0.4999991131107159, 9, 2490000]
@@ -70,3 +71,4 @@ LOSERS:
 ['Virginia', 1.0, 13, 4159000]
 ['Washington', 1.0, 12, 3852000]
 ['Wisconsin', 1.0, 10, 3129000]
+```
