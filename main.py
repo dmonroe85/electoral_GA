@@ -15,19 +15,20 @@ def random_votes():
 
 def change_1_vote(l):
     c = random.randrange(conf.N_STATES)
-    return [uniform() if i == c else x for i, x in enumerate(l)]
+    r = uniform()
+    return [r if i == c else x for i, x in enumerate(l)]
 
 def radicalize(l):
-    return [
-        x ** (uniform() * .5) if x >= .5 else x ** (uniform() * 2)
-        for x in l
-    ]
+    c = random.randrange(conf.N_STATES)
+    x = l[c]
+    r = x ** (uniform() * .5) if x >= .5 else x ** (uniform() * 2)
+    return [r if i == c else x for i, x in enumerate(l)]
 
 def moderatize(l):
-    return [
-        x ** (uniform() * 2) if x >= .5 else x ** (uniform() * .5) 
-        for x in l
-    ]
+    c = random.randrange(conf.N_STATES)
+    x = l[c]
+    r = x ** (uniform() * 2) if x >= .5 else x ** (uniform() * .5)
+    return [r if i == c else x for i, x in enumerate(l)]
 
 def jitter(l):
     return [max(0.0, min(1.0, x + (.01 * uniform()))) for x in l]
